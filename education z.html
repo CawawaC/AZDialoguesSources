@@ -1,0 +1,319 @@
+<html>
+	<head>
+		<title>Fanny - 01 - v02</title>
+		<script type="text/javascript">
+/**
+ * Twison - Twine 2 JSON Export Story Format
+ * 
+ * Copyright (c) 2015 Mike Walker
+ * https://lazerwalker.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+var Twison={extractLinksFromText:function(t){var n=t.match(/\[\[.+?\]\]/g);return n?n.map(function(t){var n=t.match(/\[\[(.*?)\-\&gt;(.*?)\]\]/);return n?{name:n[1],link:n[2]}:(t=t.substring(2,t.length-2),{name:t,link:t})}):void 0},convertPassage:function(t){var n={text:t.innerHTML},a=Twison.extractLinksFromText(n.text);if(a&&(n.links=a),["name","pid","position","tags"].forEach(function(a){var e=t.attributes[a].value;e&&(n[a]=e)}),n.position){var e=n.position.split(",");n.position={x:e[0],y:e[1]}}return n.tags&&(n.tags=n.tags.split(" ")),n},convertStory:function(t){var n=t.getElementsByTagName("tw-passagedata"),a=Array.prototype.slice.call(n).map(Twison.convertPassage),e={passages:a};["name","startnode","creator","creator-version","ifid"].forEach(function(n){var a=t.attributes[n].value;a&&(e[n]=a)});var i={};return e.passages.forEach(function(t){i[t.name]=t.pid}),e.passages.forEach(function(t){t.links&&t.links.forEach(function(t){t.pid=i[t.link]})}),e},convert:function(){var t=document.getElementsByTagName("tw-storydata")[0],n=JSON.stringify(Twison.convertStory(t),null,2);document.getElementById("output").innerHTML=n}};window.Twison=Twison;		
+		</script>
+	</head>
+	<body>
+		<pre id="output">
+		
+		</pre>
+		<div id="storyData" style="display: none;">
+			<tw-storydata name="Fanny - 01 - v02" startnode="1" creator="Twine" creator-version="2.2.1" ifid="A7A144AB-38F8-4BD6-9B8E-AB9A0BA3974C" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+</script><tw-tag name="Zoé" color="red"></tw-tag>,<tw-tag name="Albert" color="blue"></tw-tag><tw-passagedata pid="1" name="Où est-ce que tu as appris tous ces sortilèges ?" tags="Albert" position="350,600" size="100,100">Où est-ce que tu as appris tous ces sortilèges ?
+
+[[x(-&gt;Si ça t&#39;intéresse, mon cercle a disparu avec la répression des sorcières. Il n&#39;en reste plus rien aujourd&#39;hui. Sans l&#39;Empire je serais encore auprès de mes soeurs.]]
+
+[[:(-&gt;J&#39;ai étudié à l&#39;école de la Vigilence sous la direction de Meyelle. J&#39;étais sa meilleure disciple, et la dernière.]] </tw-passagedata><tw-passagedata pid="2" name="Si ça t&#39;intéresse, mon cercle a disparu avec la répression des sorcières. Il n&#39;en reste plus rien aujourd&#39;hui. Sans l&#39;Empire je serais encore auprès de mes soeurs." tags="Zoé" position="575,350" size="100,100">Si ça t&#39;intéresse, mon cercle a disparu avec la répression des sorcières. Il n&#39;en reste plus rien aujourd&#39;hui. Sans l&#39;Empire je serais encore auprès de mes soeurs.
+
+[[x(-&gt;Je m&#39;en veux terriblement d&#39;avoir été l&#39;un d&#39;eux. Mais je ne peux pas revenir en arrière.]]
+
+[[:&#39;(-&gt;Je suis désolé.]]</tw-passagedata><tw-passagedata pid="3" name="J&#39;ai étudié à l&#39;école de la Vigilence sous la direction de Meyelle. J&#39;étais sa meilleure disciple, et la dernière." tags="Zoé" position="575,850" size="100,100">J&#39;ai étudié à l&#39;école de la Vigilence sous la direction de Meyelle. J&#39;étais sa meilleure disciple, et la dernière.
+
+[[:O-&gt;Pourquoi la dernière?]]
+
+[[;)-&gt;La meilleure ? Ça ne m&#39;étonne pas.]]
+
+[[:&#39;(-&gt;Je suis désolé.]]</tw-passagedata><tw-passagedata pid="4" name="Je suis désolé." tags="Albert" position="725,800" size="100,100">Je suis désolé.
+
+[[:(-&gt;Ce n&#39;est pas ta faute. Enfin pas directement.]]
+
+[[o-o-&gt;Tu penses vraiment ce que tu dis ?]]</tw-passagedata><tw-passagedata pid="5" name="La meilleure ? Ça ne m&#39;étonne pas." tags="Albert" position="725,1050" size="100,100">La meilleure ? Ça ne m&#39;étonne pas.
+
+[[:3-&gt;C&#39;est gentil.]]
+
+[[xP-&gt;Lèche-bottes !]]
+
+[[o-o-&gt;Tu penses vraiment ce que tu dis ?]]</tw-passagedata><tw-passagedata pid="6" name="C&#39;est gentil." tags="Zoé" position="875,925" size="100,100">C&#39;est gentil.
+
+[[:(-&gt;Ton ancienne vie doit te manquer. Nous avons tous les deux laissé beaucoup derrière nous.]]
+
+[[e-e-&gt;Comment c&#39;était d&#39;être une disciple là-bas ?]]</tw-passagedata><tw-passagedata pid="7" name="Pourquoi la dernière?" tags="Albert" position="525,600" size="100,100">Pourquoi la dernière?
+
+[[x(-&gt;Si ça t&#39;intéresse, mon cercle a disparu avec la répression des sorcières. Il n&#39;en reste plus rien aujourd&#39;hui. Sans l&#39;Empire je serais encore auprès de mes soeurs.]]</tw-passagedata><tw-passagedata pid="8" name="Ce n&#39;est pas ta faute. Enfin pas directement." tags="Zoé" position="875,800" size="100,100">Ce n&#39;est pas ta faute. Enfin pas directement.
+
+[[e-e-&gt;Comment c&#39;était d&#39;être une disciple là-bas ?]]
+
+[[:(-&gt;Ton ancienne vie doit te manquer. Nous avons tous les deux laissé beaucoup derrière nous.]]
+
+[[:)-&gt;Ça me touche que tu dise ça. Parfois j&#39;ai l&#39;impression que tu ne me fais pas confiance.]]</tw-passagedata><tw-passagedata pid="9" name="Je m&#39;en veux terriblement d&#39;avoir été l&#39;un d&#39;eux. Mais je ne peux pas revenir en arrière." tags="Albert" position="725,400" size="100,100">Je m&#39;en veux terriblement d&#39;avoir été l&#39;un d&#39;eux. Mais je ne peux pas revenir en arrière.
+
+[[:x-&gt;...]]
+
+[[x(-&gt;On a toujours le choix.]]
+
+[[:(-&gt;Ce n&#39;est pas ta faute. Enfin pas directement.]]</tw-passagedata><tw-passagedata pid="10" name="..." tags="Zoé" position="875,450" size="100,100">...
+
+[[x(-&gt;Je vois.]]
+
+
+[[:(-&gt;Je peux te prouver mille fois ma valeur, mais cela n&#39;a aucun sens si tu ne me fais pas confiance.]]</tw-passagedata><tw-passagedata pid="11" name="On a toujours le choix." tags="Zoé" position="875,300" size="100,100">On a toujours le choix.
+
+[[:V-&gt;Je vois.]]
+
+[[:(-&gt;Tu n&#39;as aucune idée de ce que j&#39;ai traversé. Tout n&#39;est pas tout blanc ou tout noir.]]</tw-passagedata><tw-passagedata pid="12" name="Comment c&#39;était d&#39;être une disciple là-bas ?" tags="Albert" position="1075,1025" size="100,100">Comment c&#39;était d&#39;être une disciple là-bas ?
+
+[[e-e-&gt;Ça me semble si loin aujourd&#39;hui. J&#39;ai adoré être élève au sein du cercle de la Vigilence. J&#39;avais le sentiment de me dépasser. Mais les choses ce sont détériorées très vite. Vers la fin, je vivais dans la peur de retrouver ma maîtresse assassinée.]]
+
+[[x@-&gt;C&#39;est donc la seule chose qui t&#39;intéresse ? Tu as été envoyé par l&#39;Empire pour faire ami-ami avec l&#39;ennemi et me soutirer des informations ?]]</tw-passagedata><tw-passagedata pid="13" name="Ton ancienne vie doit te manquer. Nous avons tous les deux laissé beaucoup derrière nous." tags="Albert" position="1025,800" size="100,100">Ton ancienne vie doit te manquer. Nous avons tous les deux laissé beaucoup derrière nous.
+
+[[:&#39;(-&gt;Ce genre de blessure ne guérit jamais vraiment. Mais il faut avancer maintenant.]]
+
+[[:3-&gt;Je ne regrette rien. Si les choses avaient été différentes, je ne t&#39;aurais pas rencontré.]]
+
+[[e-e-&gt;Ça me semble si loin aujourd&#39;hui. J&#39;ai adoré être élève au sein du cercle de la Vigilence. J&#39;avais le sentiment de me dépasser. Mais les choses ce sont détériorées très vite. Vers la fin, je vivais dans la peur de retrouver ma maîtresse assassinée.]]</tw-passagedata><tw-passagedata pid="14" name="Ça me touche que tu dise ça. Parfois j&#39;ai l&#39;impression que tu ne me fais pas confiance." tags="Albert" position="1025,650" size="100,100">Ça me touche que tu dise ça. Parfois j&#39;ai l&#39;impression que tu ne me fais pas confiance.
+
+[[:(-&gt;Je vais essayer, pardonne-moi.]]
+
+[[:&#39;(-&gt;Ce genre de blessure ne guérit jamais vraiment. Mais il faut avancer maintenant.]]</tw-passagedata><tw-passagedata pid="15" name="Je vois." tags="Albert" position="1025,300" size="100,100">Je vois.
+
+[[:|-&gt;Je t&#39;ai bien suivi jusqu&#39;ici, mais je ne peux pas oublier ce que tu as fait.]]
+
+[[x(-&gt;C&#39;était une erreur de te suivre.]]</tw-passagedata><tw-passagedata pid="16" name="Je peux te prouver mille fois ma valeur, mais cela n&#39;a aucun sens si tu ne me fais pas confiance." tags="Albert" position="1025,450" size="100,100">Je peux te prouver mille fois ma valeur, mais cela n&#39;a aucun sens si tu ne me fais pas confiance.
+
+[[:|-&gt;Je t&#39;ai bien suivi jusqu&#39;ici, mais je ne peux pas oublier ce que tu as fait.]]
+
+[[:(-&gt;Je vais essayer, pardonne-moi.]]
+
+[[x@-&gt;Les tiens ont tué mes amis, pourchassé mes soeurs. J&#39;ai été forcée de me cacher des mois durant, craignant pour mon cercle.]]</tw-passagedata><tw-passagedata pid="17" name="Je t&#39;ai bien suivi jusqu&#39;ici, mais je ne peux pas oublier ce que tu as fait." tags="Zoé" position="1225,350" size="100,100">Je t&#39;ai bien suivi jusqu&#39;ici, mais je ne peux pas oublier ce que tu as fait.
+
+[[x(-&gt;Je me suis retourné contre l&#39;Empire dès que j&#39;ai compris ce qu&#39;il se passait. Ne m&#39;accuse pas de tous les maux non plus.]]
+
+[[:(-&gt;Puisse le temps faire son oeuvre et que tu finisse par voir qui je suis.]]</tw-passagedata><tw-passagedata pid="18" name="Je vais essayer, pardonne-moi." tags="Zoé" position="1175,650" size="100,100">Je vais essayer, pardonne-moi.
+
+[[e-e-&gt;Comment c&#39;était d&#39;être une disciple là-bas ?]]
+
+[[:(-&gt;Ton ancienne vie doit te manquer. Nous avons tous les deux laissé beaucoup derrière nous.]]</tw-passagedata><tw-passagedata pid="19" name="Je me suis retourné contre l&#39;Empire dès que j&#39;ai compris ce qu&#39;il se passait. Ne m&#39;accuse pas de tous les maux non plus." tags="Albert" position="1350,350" size="100,100">Je me suis retourné contre l&#39;Empire dès que j&#39;ai compris ce qu&#39;il se passait. Ne m&#39;accuse pas de tous les maux non plus.
+
+[[:(-&gt;Je ne t&#39;accuse pas de tout. J&#39;essaye de comprendre. Et je ne sais pas si je peux croire ce que tu raconte.]]
+
+[[x(-&gt;Les tiens ont tué mes amis, pourchassé mes soeurs. J&#39;ai été forcée de me cacher des mois durant, craignant pour mon cercle.]]</tw-passagedata><tw-passagedata pid="20" name="Puisse le temps faire son oeuvre et que tu finisse par voir qui je suis." tags="Albert" position="1350,525" size="100,100">Puisse le temps faire son oeuvre et que tu finisse par voir qui je suis.
+
+[[x@-&gt;Comment veux-tu que j&#39;arrête d&#39;y penser ? Tout ce que j&#39;ai enduré. Ça ne marche pas comme ça.]]
+
+[[:(-&gt;Je vais essayer, pardonne-moi.]]</tw-passagedata><tw-passagedata pid="21" name="C&#39;était une erreur de te suivre." tags="Zoé" position="1225,200" size="100,100">C&#39;était une erreur de te suivre.
+
+[[x(-&gt;C&#39;est ce que je crois aussi.]]
+
+[[:(-&gt;Ne dis pas ça.]]</tw-passagedata><tw-passagedata pid="22" name="C&#39;est ce que je crois aussi." tags="Albert" position="1350,25" size="100,100">C&#39;est ce que je crois aussi.
+
+[[:x-&gt;Hmm...]]
+
+[[x(-&gt;Merci pour ton aide. Tu peux t&#39;en aller maintenant.]]</tw-passagedata><tw-passagedata pid="23" name="Ne dis pas ça." tags="Albert" position="1350,200" size="100,100">Ne dis pas ça.
+
+[[x@-&gt;Comment veux-tu que j&#39;arrête d&#39;y penser ? Tout ce que j&#39;ai enduré. Ça ne marche pas comme ça.]]
+
+[[:v-&gt;À quoi ça rime tout ça. On est censés s&#39;entretuer, pas s&#39;entraider.]]</tw-passagedata><tw-passagedata pid="24" name="Hmm..." tags="Zoé" position="1500,100" size="100,100">Hmm...
+
+[[:o-&gt;Attends Zoé, ne t&#39;en vas pas.]]</tw-passagedata><tw-passagedata pid="25" name="Attends Zoé, ne t&#39;en vas pas." tags="Albert" position="1675,100" size="100,100">Attends Zoé, ne t&#39;en vas pas.
+
+[[:v-&gt;À quoi ça rime tout ça. On est censés s&#39;entretuer, pas s&#39;entraider.]]
+
+[[x(-&gt;Merci pour ton aide. Tu peux t&#39;en aller maintenant.]]</tw-passagedata><tw-passagedata pid="26" name="Comment veux-tu que j&#39;arrête d&#39;y penser ? Tout ce que j&#39;ai enduré. Ça ne marche pas comme ça." tags="Zoé" position="1500,275" size="100,100">Comment veux-tu que j&#39;arrête d&#39;y penser ? Tout ce que j&#39;ai enduré. Ça ne marche pas comme ça.
+
+[[:o-&gt;Attends Zoé, ne t&#39;en vas pas.]]
+
+[[ò-ó-&gt;Je ne te demande pas de me pardonner. Mais tu vas avoir besoin de moi.]]</tw-passagedata><tw-passagedata pid="27" name="Je ne t&#39;accuse pas de tout. J&#39;essaye de comprendre. Et je ne sais pas si je peux croire ce que tu raconte." tags="Zoé" position="1500,425" size="100,100">Je ne t&#39;accuse pas de tout. J&#39;essaye de comprendre. Et je ne sais pas si je peux croire ce que tu raconte.
+
+[[ò-ó-&gt;Je ferai tout ce qui est en mon pouvoir pour te montrer que mon coeur est bon.]]
+
+[[:)-&gt;Si j&#39;avais voulu te tuer, ce serait fait depuis longtemps.]]</tw-passagedata><tw-passagedata pid="28" name="Les tiens ont tué mes amis, pourchassé mes soeurs. J&#39;ai été forcée de me cacher des mois durant, craignant pour mon cercle." tags="Zoé" position="1175,500" size="100,100">Les tiens ont tué mes amis, pourchassé mes soeurs. J&#39;ai été forcée de me cacher des mois durant, craignant pour mon cercle.
+
+[[:&#39;(-&gt;Je suis désolé.]]
+
+[[:(-&gt;Puisse le temps faire son oeuvre et que tu finisse par voir qui je suis.]]</tw-passagedata><tw-passagedata pid="29" name="À quoi ça rime tout ça. On est censés s&#39;entretuer, pas s&#39;entraider." tags="Zoé" position="1675,250" size="100,100">À quoi ça rime tout ça. On est censés s&#39;entretuer, pas s&#39;entraider.
+
+[[^^-&gt;Si j&#39;avais voulu te tuer, ce serait fait depuis longtemps.]]
+
+[[ò-ó-&gt;Je ne te demande pas de me pardonner. Mais tu vas avoir besoin de moi.]]
+
+[[:)-&gt;Si on m&#39;avait dit, il y a deux ans, que je serais en train de me balader main dans la main avec une sorcière, je ne l&#39;aurais pas cru.]]</tw-passagedata><tw-passagedata pid="30" name="Merci pour ton aide. Tu peux t&#39;en aller maintenant." tags="Zoé" position="1825,25" size="100,100">Merci pour ton aide. Tu peux t&#39;en aller maintenant.
+
+[[Game Over]]</tw-passagedata><tw-passagedata pid="31" name="Game Over" tags="" position="1975,25" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="32" name="Je ferai tout ce qui est en mon pouvoir pour te montrer que mon coeur est bon." tags="Albert" position="1500,675" size="100,100">Je ferai tout ce qui est en mon pouvoir pour te montrer que mon coeur est bon.
+
+[[:p-&gt;N&#39;y a-t-il pas que les traitres pour affirmer des trucs pareils ?]]
+
+[[;)-&gt;Je pourrais te pulvériser en moins de temps qu&#39;il n&#39;en faut pour le dire. Mais si tu es dans mes petits papiers, je tâcherai plutôt de me souvenir de mes sortilèges de guérison.]]</tw-passagedata><tw-passagedata pid="33" name="Si j&#39;avais voulu te tuer, ce serait fait depuis longtemps." tags="Albert" position="1675,375" size="100,100">Si j&#39;avais voulu te tuer, ce serait fait depuis longtemps.
+
+[[^^-&gt;Je tremble d&#39;effroi !]]
+
+[[:p-&gt;N&#39;y a-t-il pas que les traitres pour affirmer des trucs pareils ?]]</tw-passagedata><tw-passagedata pid="34" name="Ce genre de blessure ne guérit jamais vraiment. Mais il faut avancer maintenant." tags="Zoé" position="1225,900" size="100,100">Ce genre de blessure ne guérit jamais vraiment. Mais il faut avancer maintenant.
+
+[[o-o-&gt;Qu&#39;est-ce que tu sais faire ? Quel genre de magie ?]]
+
+[[:|-&gt;Est-ce que tu pense qu&#39;il y a de l&#39;espoir ?]]</tw-passagedata><tw-passagedata pid="35" name="Je ne regrette rien. Si les choses avaient été différentes, je ne t&#39;aurais pas rencontré." tags="Zoé" position="1350,675" size="100,100">Je ne regrette rien. Si les choses avaient été différentes, je ne t&#39;aurais pas rencontré.
+
+[[ò-ó-&gt;Je ferai tout ce qui est en mon pouvoir pour te montrer que mon coeur est bon.]]
+
+[[:)-&gt;Si on m&#39;avait dit, il y a deux ans, que je serais en train de me balader main dans la main avec une sorcière, je ne l&#39;aurais pas cru.]]</tw-passagedata><tw-passagedata pid="36" name="N&#39;y a-t-il pas que les traitres pour affirmer des trucs pareils ?" tags="Zoé" position="1675,500" size="100,100">N&#39;y a-t-il pas que les traitres pour affirmer des trucs pareils ?
+
+[[:)-&gt;Si on m&#39;avait dit, il y a deux ans, que je serais en train de me balader main dans la main avec une sorcière, je ne l&#39;aurais pas cru.]]</tw-passagedata><tw-passagedata pid="37" name="Si on m&#39;avait dit, il y a deux ans, que je serais en train de me balader main dans la main avec une sorcière, je ne l&#39;aurais pas cru." tags="Albert" position="1825,550" size="100,100">Si on m&#39;avait dit, il y a deux ans, que je serais en train de me balader main dans la main avec une sorcière, je ne l&#39;aurais pas cru.
+
+[[^^-&gt;Tu as cru que j&#39;allais te laisser me tenir la main ? Un claquement de doigts et tu es mort.]]
+
+[[&gt;-&lt;-&gt;Ne t&#39;emballe pas.]]</tw-passagedata><tw-passagedata pid="38" name="Je tremble d&#39;effroi !" tags="Zoé" position="1850,400" size="100,100">Je tremble d&#39;effroi !
+
+[[:3-&gt;Si on m&#39;avait dit, il y a deux ans, que je serais en train de me balader main dans la main avec une sorcière, je ne l&#39;aurais pas cru.]]
+
+[[:)-&gt;Ça va. Je sais que je ne fais pas le poids.]]</tw-passagedata><tw-passagedata pid="39" name="Tu as cru que j&#39;allais te laisser me tenir la main ? Un claquement de doigts et tu es mort." tags="Zoé" position="2100,550" size="100,100">Tu as cru que j&#39;allais te laisser me tenir la main ? Un claquement de doigts et tu es mort.
+
+[[:)-&gt;Ça va. Je sais que je ne fais pas le poids.]]
+
+[[^^-&gt;Calme-toi. On a encore pas mal de choses à régler.]]</tw-passagedata><tw-passagedata pid="40" name="Ça va. Je sais que je ne fais pas le poids." tags="Albert" position="2100,400" size="100,100">Ça va. Je sais que je ne fais pas le poids.
+
+[[;)-&gt;Je pourrais te pulvériser en moins de temps qu&#39;il n&#39;en faut pour le dire. Mais si tu es dans mes petits papiers, je tâcherai plutôt de me souvenir de mes sortilèges de guérison.]]
+
+[[^^-&gt;Tu parle beaucoup. Je me demande pourquoi je t&#39;ai laissé en vie.]]</tw-passagedata><tw-passagedata pid="41" name="Ça me semble si loin aujourd&#39;hui. J&#39;ai adoré être élève au sein du cercle de la Vigilence. J&#39;avais le sentiment de me dépasser. Mais les choses ce sont détériorées très vite. Vers la fin, je vivais dans la peur de retrouver ma maîtresse assassinée." tags="Zoé" position="1225,1025" size="100,100">Ça me semble si loin aujourd&#39;hui. J&#39;ai adoré être élève au sein du cercle de la Vigilence. J&#39;avais le sentiment de me dépasser. Mais les choses ce sont détériorées très vite. Vers la fin, je vivais dans la peur de retrouver ma maîtresse assassinée.
+
+[[o-o-&gt;Qu&#39;est-ce que tu sais faire ? Quel genre de magie ?]]
+
+[[:|-&gt;Est-ce que tu pense qu&#39;il y a de l&#39;espoir ?]]</tw-passagedata><tw-passagedata pid="42" name="Qu&#39;est-ce que tu sais faire ? Quel genre de magie ?" tags="Albert" position="1350,900" size="100,100">Qu&#39;est-ce que tu sais faire ? Quel genre de magie ?
+
+[[x@-&gt;C&#39;est donc la seule chose qui t&#39;intéresse ? Tu as été envoyé par l&#39;Empire pour faire ami-ami avec l&#39;ennemi et me soutirer des informations ?]]
+
+[[:)-&gt;Je sais à peu près tout faire. Des sorts de combustion, de la lévitation, métamorphose, inversion de gravité quand je suis en forme...]]</tw-passagedata><tw-passagedata pid="43" name="C&#39;est donc la seule chose qui t&#39;intéresse ? Tu as été envoyé par l&#39;Empire pour faire ami-ami avec l&#39;ennemi et me soutirer des informations ?" tags="Zoé" position="1450,1250" size="100,100">C&#39;est donc la seule chose qui t&#39;intéresse ? Tu as été envoyé par l&#39;Empire pour faire ami-ami avec l&#39;ennemi et me soutirer des informations ?
+
+[[:O-&gt;Mais non enfin !]]</tw-passagedata><tw-passagedata pid="44" name="Je sais à peu près tout faire. Des sorts de combustion, de la lévitation, métamorphose, inversion de gravité quand je suis en forme..." tags="Zoé" position="1925,900" size="100,100">Je sais à peu près tout faire. Des sorts de combustion, de la lévitation, métamorphose, inversion de gravité quand je suis en forme...
+
+[[:)-&gt;Si on m&#39;avait dit, il y a deux ans, que je serais en train de me balader main dans la main avec une sorcière, je ne l&#39;aurais pas cru.]]
+
+[[^^-&gt;Tu saurais me transformer en sorcier ?]]</tw-passagedata><tw-passagedata pid="45" name="Est-ce que tu pense qu&#39;il y a de l&#39;espoir ?" tags="Albert" position="1350,1025" size="100,100">Est-ce que tu pense qu&#39;il y a de l&#39;espoir ?
+
+[[;)-&gt;Abruti. Tant qu&#39;il y a de la vie, il y a de l&#39;espoir !]]</tw-passagedata><tw-passagedata pid="46" name="Abruti. Tant qu&#39;il y a de la vie, il y a de l&#39;espoir !" tags="Zoé" position="1500,1025" size="100,100">Abruti. Tant qu&#39;il y a de la vie, il y a de l&#39;espoir !
+
+[[;)-&gt;J&#39;imagine que je n&#39;ai qu&#39;une vague idée de ce dont tu es capable.]]
+
+[[:3-&gt;Tu es si jolie quand tu t&#39;emporte.]]</tw-passagedata><tw-passagedata pid="47" name="J&#39;imagine que je n&#39;ai qu&#39;une vague idée de ce dont tu es capable." tags="Albert" position="1675,1025" size="100,100">J&#39;imagine que je n&#39;ai qu&#39;une vague idée de ce dont tu es capable.
+
+[[:)-&gt;Je sais à peu près tout faire. Des sorts de combustion, de la lévitation, métamorphose, inversion de gravité quand je suis en forme...]]
+
+[[;)-&gt;Je pourrais te pulvériser en moins de temps qu&#39;il n&#39;en faut pour le dire. Mais si tu es dans mes petits papiers, je tâcherai plutôt de me souvenir de mes sortilèges de guérison.]]</tw-passagedata><tw-passagedata pid="48" name="Tu es si jolie quand tu t&#39;emporte." tags="Albert" position="1500,800" size="100,100">Tu es si jolie quand tu t&#39;emporte.
+
+[[:3-&gt;Tu ne m&#39;as pas vue en colère.]]
+
+[[e-e-&gt;Tant que ça ne t&#39;empêche pas de me montrer le chemin.]]</tw-passagedata><tw-passagedata pid="49" name="Tu ne m&#39;as pas vue en colère." tags="Zoé" position="1675,650" size="100,100">Tu ne m&#39;as pas vue en colère.
+
+[[;)-&gt;J&#39;imagine que je n&#39;ai qu&#39;une vague idée de ce dont tu es capable.]]
+
+[[:)-&gt;Si on m&#39;avait dit, il y a deux ans, que je serais en train de me balader main dans la main avec une sorcière, je ne l&#39;aurais pas cru.]]</tw-passagedata><tw-passagedata pid="50" name="Tant que ça ne t&#39;empêche pas de me montrer le chemin." tags="Zoé" position="1700,775" size="100,100">Tant que ça ne t&#39;empêche pas de me montrer le chemin.
+
+[[:)-&gt;Si on m&#39;avait dit, il y a deux ans, que je serais en train de me balader main dans la main avec une sorcière, je ne l&#39;aurais pas cru.]]</tw-passagedata><tw-passagedata pid="51" name="Mais non enfin !" tags="Albert" position="1575,1250" size="100,100">Mais non enfin !
+
+[[x(-&gt;J&#39;ai été stupide de te faire confiance.]]
+
+[[:(-&gt;Je ne t&#39;accuse pas de tout. J&#39;essaye de comprendre. Et je ne sais pas si je peux croire ce que tu raconte.]]</tw-passagedata><tw-passagedata pid="52" name="J&#39;ai été stupide de te faire confiance." tags="Zoé" position="1700,1250" size="100,100">J&#39;ai été stupide de te faire confiance.
+
+[[Game Over2]]</tw-passagedata><tw-passagedata pid="53" name="Game Over2" tags="" position="1825,1250" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="54" name="Tu n&#39;as aucune idée de ce que j&#39;ai traversé. Tout n&#39;est pas tout blanc ou tout noir." tags="Albert" position="1025,150" size="100,100">Tu n&#39;as aucune idée de ce que j&#39;ai traversé. Tout n&#39;est pas tout blanc ou tout noir.
+
+[[x(-&gt;C&#39;était une erreur de te suivre.]]
+
+[[x@-&gt;Les tiens ont tué mes amis, pourchassé mes soeurs. J&#39;ai été forcée de me cacher des mois durant, craignant pour mon cercle.]]</tw-passagedata><tw-passagedata pid="55" name="Je connais l&#39;Empire, son fonctionnement, ses failles. Et toi tu possède un pouvoir sans limite. On a besoin l&#39;un de l&#39;autre pour faire changer les choses." tags="Albert" position="2150,150" size="100,100">Je connais l&#39;Empire, son fonctionnement, ses failles. Et toi tu possède un pouvoir sans limite. On a besoin l&#39;un de l&#39;autre pour faire changer les choses.
+
+[[;)-&gt;Je pourrais te pulvériser en moins de temps qu&#39;il n&#39;en faut pour le dire. Mais si tu es dans mes petits papiers, je tâcherai plutôt de me souvenir de mes sortilèges de guérison.]]
+
+[[&gt;-&lt;-&gt;Quel est ton plan ?]]</tw-passagedata><tw-passagedata pid="56" name="Lèche-bottes !" tags="Zoé" position="875,1175" size="100,100">Lèche-bottes !
+
+[[^^-&gt;Tu doute vraiment de chaque mot que je prononce !]]
+
+[[e-e-&gt;Comment c&#39;était d&#39;être une disciple là-bas ?]]</tw-passagedata><tw-passagedata pid="57" name="Tu penses vraiment ce que tu dis ?" tags="Zoé" position="875,1050" size="100,100">Tu penses vraiment ce que tu dis ?
+
+[[:)-&gt;J&#39;ai bien des défauts mais pas celui d&#39;être un menteur.]]
+
+[[^^-&gt;Tu doute vraiment de chaque mot que je prononce !]]</tw-passagedata><tw-passagedata pid="58" name="J&#39;ai bien des défauts mais pas celui d&#39;être un menteur." tags="Albert" position="1075,1150" size="100,100">J&#39;ai bien des défauts mais pas celui d&#39;être un menteur.
+
+[[:)-&gt;J&#39;ai appris à me méfier de tout et de tout le monde. Mais tu as l&#39;air d&#39;être quelqu&#39;un de bon.]]
+
+[[:(-&gt;Si je veux rester en vie, je ne peux plus me permettre de faire confiance à qui que ce soit.]]</tw-passagedata><tw-passagedata pid="59" name="Tu doute vraiment de chaque mot que je prononce !" tags="Albert" position="1075,1300" size="100,100">Tu doute vraiment de chaque mot que je prononce !
+
+[[:)-&gt;J&#39;ai appris à me méfier de tout et de tout le monde. Mais tu as l&#39;air d&#39;être quelqu&#39;un de bon.]]
+
+[[:(-&gt;Si je veux rester en vie, je ne peux plus me permettre de faire confiance à qui que ce soit.]]</tw-passagedata><tw-passagedata pid="60" name="Tu saurais me transformer en sorcier ?" tags="Albert" position="1975,1050" size="100,100">Tu saurais me transformer en sorcier ?
+
+[[&gt;-&lt;-&gt;Ne t&#39;emballe pas.]]
+
+[[^^-&gt;Non. Par contre je peux te transformer en cafard si tu veux.]]</tw-passagedata><tw-passagedata pid="61" name="J&#39;ai appris à me méfier de tout et de tout le monde. Mais tu as l&#39;air d&#39;être quelqu&#39;un de bon." tags="Zoé" position="1225,1150" size="100,100">J&#39;ai appris à me méfier de tout et de tout le monde. Mais tu as l&#39;air d&#39;être quelqu&#39;un de bon.
+
+[[e-e-&gt;Comment c&#39;était d&#39;être une disciple là-bas ?]]
+
+[[:|-&gt;Est-ce que tu pense qu&#39;il y a de l&#39;espoir ?]]</tw-passagedata><tw-passagedata pid="62" name="Si je veux rester en vie, je ne peux plus me permettre de faire confiance à qui que ce soit." tags="Zoé" position="1225,1300" size="100,100">Si je veux rester en vie, je ne peux plus me permettre de faire confiance à qui que ce soit.
+
+[[:|-&gt;Est-ce que tu pense qu&#39;il y a de l&#39;espoir ?]]
+
+[[;)-&gt;J&#39;imagine que je n&#39;ai qu&#39;une vague idée de ce dont tu es capable.]]</tw-passagedata><tw-passagedata pid="63" name="Je ne te demande pas de me pardonner. Mais tu vas avoir besoin de moi." tags="Albert" position="1825,150" size="100,100">Je ne te demande pas de me pardonner. Mais tu vas avoir besoin de moi.
+
+[[-_--&gt;Je n&#39;ai besoin de personne.]]
+
+[[x(-&gt;Merci pour ton aide. Tu peux t&#39;en aller maintenant.]]</tw-passagedata><tw-passagedata pid="64" name="Je n&#39;ai besoin de personne." tags="Zoé" position="1975,150" size="100,100">Je n&#39;ai besoin de personne.
+
+[[x(-&gt;Très bien, débrouille-toi toute seule.]]
+
+[[ò-ó-&gt;Je connais l&#39;Empire, son fonctionnement, ses failles. Et toi tu possède un pouvoir sans limite. On a besoin l&#39;un de l&#39;autre pour faire changer les choses.]]</tw-passagedata><tw-passagedata pid="65" name="Je pourrais te pulvériser en moins de temps qu&#39;il n&#39;en faut pour le dire. Mais si tu es dans mes petits papiers, je tâcherai plutôt de me souvenir de mes sortilèges de guérison." tags="Zoé" position="1800,1100" size="100,100">Je pourrais te pulvériser en moins de temps qu&#39;il n&#39;en faut pour le dire. Mais si tu es dans mes petits papiers, je tâcherai plutôt de me souvenir de mes sortilèges de guérison.
+
+[[^^-&gt;Tu saurais me transformer en sorcier ?]]
+
+[[:o-&gt;Si je meurs, tu peux me ramener à la vie ?]]</tw-passagedata><tw-passagedata pid="66" name="Très bien, débrouille-toi toute seule." tags="Albert" position="2125,25" size="100,100">Très bien, débrouille-toi toute seule.
+
+[[Game Over]]</tw-passagedata><tw-passagedata pid="67" name="Quel est ton plan ?" tags="Zoé" position="2475,650" size="100,100">Quel est ton plan ?</tw-passagedata><tw-passagedata pid="68" name="Ne t&#39;emballe pas." tags="Zoé" position="2100,700" size="100,100">Ne t&#39;emballe pas.
+
+[[&gt;-&lt;-&gt;Bon, il est temps de parler de choses sérieuses.]]
+
+[[;)-&gt;Et toi ne la ramène pas trop. On a un long chemin à faire.]]</tw-passagedata><tw-passagedata pid="69" name="Calme-toi. On a encore pas mal de choses à régler." tags="Albert" position="2325,525" size="100,100">Calme-toi. On a encore pas mal de choses à régler.
+
+[[&gt;-&lt;-&gt;Quel est ton plan ?]]</tw-passagedata><tw-passagedata pid="70" name="Tu parle beaucoup. Je me demande pourquoi je t&#39;ai laissé en vie." tags="Zoé" position="2225,400" size="100,100">Tu parle beaucoup. Je me demande pourquoi je t&#39;ai laissé en vie.
+
+[[^^-&gt;Calme-toi. On a encore pas mal de choses à régler.]]
+
+[[;)-&gt;Et toi ne la ramène pas trop. On a un long chemin à faire.]]</tw-passagedata><tw-passagedata pid="71" name="Si je meurs, tu peux me ramener à la vie ?" tags="Albert" position="2050,1175" size="100,100">Si je meurs, tu peux me ramener à la vie ?
+
+[[&gt;-&lt;-&gt;Ne t&#39;emballe pas.]]
+
+[[^^-&gt;Non. Par contre je peux te transformer en cafard si tu veux.]]</tw-passagedata><tw-passagedata pid="72" name="Non. Par contre je peux te transformer en cafard si tu veux." tags="Zoé" position="2125,875" size="100,100">Non. Par contre je peux te transformer en cafard si tu veux.
+
+[[^^-&gt;Calme-toi. On a encore pas mal de choses à régler.]]
+
+[[;)-&gt;Et toi ne la ramène pas trop. On a un long chemin à faire.]]</tw-passagedata><tw-passagedata pid="73" name="Bon, il est temps de parler de choses sérieuses." tags="Albert" position="2250,950" size="100,100">Bon, il est temps de parler de choses sérieuses.
+
+[[&gt;-&lt;-&gt;Quel est ton plan ?]]</tw-passagedata><tw-passagedata pid="74" name="Et toi ne la ramène pas trop. On a un long chemin à faire." tags="Albert" position="2250,750" size="100,100">Et toi ne la ramène pas trop. On a un long chemin à faire.
+
+[[&gt;-&lt;-&gt;Quel est ton plan ?]]</tw-passagedata></tw-storydata>
+		</div>
+		<script>
+			Twison.convert()
+		</script>
+	</body>
+</html>
